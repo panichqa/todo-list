@@ -9,7 +9,7 @@ class Task(models.Model):
     tags = models.ManyToManyField("Tag", related_name="tasks")
 
     def __str__(self):
-        return f"{self.content} - {'Done' if self.is_done else 'Not Done'}"
+        return f"{self.content} - {'Done' if self.is_done else 'Not Done'} - {self.created_at.strftime('%Y-%m-%d %H:%M')}"
 
 
 class Tag(models.Model):
